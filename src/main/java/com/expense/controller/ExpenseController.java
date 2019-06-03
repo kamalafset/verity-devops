@@ -137,7 +137,7 @@ public class ExpenseController {
 	// Delete expense
 	
 	@GetMapping("/delete/{id}")
-	public String deleteExpense(@PathVariable("id") Long expenseId, RedirectAttributes redirectAttributes) {
+	public String deleteExpense(@PathVariable("id") Long expenseId, RedirectAttributes redAttributes) {
 		log.info("in deleteExpense: "+expenseId);
 		log.info("expenseId : " + expenseId);
 		if (expenseId != null) {
@@ -150,7 +150,7 @@ public class ExpenseController {
 			return "Something went wrong !";
 		}
 		
-		redirectAttributes.addFlashAttribute("msg", "Expense List is deleted successfully.");
+		redAttributes.addFlashAttribute("msg", "Expense List is deleted successfully.");
 		return "redirect:/expense-list";
 	}
 
